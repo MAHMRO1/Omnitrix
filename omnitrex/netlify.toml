@@ -1,5 +1,5 @@
 [build]
   publish = "templates"
-  command: |
+  command: "
   pip install Flask
-  flask run
+  flask run"
