@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+
+    <link href="../static/styles.css" rel="stylesheet">
+    <script src="../static/java.js"></script>
+
+    <title>Favorite Alien</title>
+
+</head>
+<body>
+    <header class="header" id="header">
+        <button id="menuButton" class="menu-button">Menu</button>
+        <h1><a href="{{  url_for('index' ) }}">Omnitrix</a></h1>
+    </header>
+    <main class="content">
+        <div id="sidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('heatblast') }}">Heatblast</a>
+            <a href="{{ url_for('wp') }}">Wildmutt</a>
+            <a href="{{ url_for('diamondhead') }}">Diamondhead</a>
+            <a href="{{ url_for('xlr8') }}">Xlr8</a>
+            <a href="{{ url_for('greymatter') }}">Greymatter</a>
+            <a href="{{ url_for('fourarms') }}">Fourarms</a>
+            <a href="{{ url_for('stinkfly') }}">Stinkfly</a>
+            <a href="{{ url_for('ripjaws') }}">Ripjaws</a>
+            <a href="{{ url_for('ghostfreak') }}">Ghostfreak</a>
+            <a href="{{ url_for('upgrade') }}">Upgrade</a>
+            <a href="{{ url_for('favorite') }}">Your favorite alien</a>
+        </div>
+        
+        <h1>Share your favorite alien with the world!</h1>
+        <form id="favoriteForm" action="/submit" method="post" class="form-inline">
+            <div class="mb-3">
+                <input type="text" name="username" class="form-control mx-auto w-auto" placeholder="your name" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <select name="alien" class="form-control mx-1" required>
+                    <option value="" disabled selected>__your favorite alien__</option>
+                    <option value="Heatblast">Heatblast</option>
+                    <option value="wp">wp</option>
+                    <option value="Diamondhead">Diamondhead</option>
+                    <option value="Xlr8">Xlr8</option>
+                    <option value="Greymatter">Greymatter</option>
+                    <option value="Fourarms">Fourarms</option>
+                    <option value="Stinkfly">Stinkfly</option>
+                    <option value="Ripjaws">Ripjaws</option>
+                    <option value="Ghostfreak">Ghostfreak</option>
+                    <option value="Upgrade">Upgrade</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+        <div id="creditRoll" class="credit-roll">
+            {% for submission in submissions %}
+                <div class="credit-roll-content">{{ submission.username }}'s favorite alien is {{ submission.alien }}</div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer class="footer">
+        <a href="mailto:muhammad.a.hashim1@gmail.com">contact</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
