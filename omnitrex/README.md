@@ -79,5 +79,5 @@ The Omnitrix Web Project is a fun and interactive application that allows users 
 
 ## Contact
 
-For any questions or suggestions, please contact [mahmros20fe4g@gmail.com].
+For any questions or suggestions, please contact [muhammad.a.hashim1@gmail.com].
 
