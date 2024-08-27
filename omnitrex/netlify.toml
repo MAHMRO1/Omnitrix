@@ -1,3 +1,0 @@
-[build]
-  publish = "templates"
-  command = "pip install Flask && FLASK_APP=app.py && flask run"
